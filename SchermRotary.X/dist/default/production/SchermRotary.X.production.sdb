@@ -3,13 +3,13 @@
 [d edition pro ]
 [d chip 16F887 ]
 [d frameptr 0 ]
-"74 C:\Users\rayzo\MPLABXProjects\SchermRotary.X\main.c
-[e E1453 _Screen_ `uc
+"75 D:\scherm\HCMS29XX-lang-lib\SchermRotary.X\main.c
+[e E1455 _Screen_ `uc
 SCREEN_1 1
 SCREEN_2 2
 SCREEN_1_2 3
 ]
-"95
+"96
 [e E1420 . `uc
 MST_OSC_DIV_04 0
 MST_OSC_DIV_16 1
@@ -30,13 +30,13 @@ CKP1_CPOL1_IDLE_HIGH 1
 CKE0_CPHA1_TRSMIT_IDL2ACT 0
 CKE1_CPHA0_TRSMIT_ACT2IDL 1
 ]
-"70 C:\Users\rayzo\MPLABXProjects\SchermRotary.X\scherm.c
-[e E1453 _Screen_ `uc
+"70 D:\scherm\HCMS29XX-lang-lib\SchermRotary.X\scherm.c
+[e E1455 _Screen_ `uc
 SCREEN_1 1
 SCREEN_2 2
 SCREEN_1_2 3
 ]
-"14 C:\Users\rayzo\MPLABXProjects\SchermRotary.X\spi.c
+"14 D:\scherm\HCMS29XX-lang-lib\SchermRotary.X\spi.c
 [e E1420 . `uc
 MST_OSC_DIV_04 0
 MST_OSC_DIV_16 1
@@ -57,41 +57,41 @@ CKP1_CPOL1_IDLE_HIGH 1
 CKE0_CPHA1_TRSMIT_IDL2ACT 0
 CKE1_CPHA0_TRSMIT_ACT2IDL 1
 ]
-"10 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\sprcadd.c
+"10 D:\cx8\Microchip\xc8\v2.45\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
-"15 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\Umul16.c
+"15 D:\cx8\Microchip\xc8\v2.45\pic\sources\c99\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
-"4 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\Umul8.c
+"4 D:\cx8\Microchip\xc8\v2.45\pic\sources\c99\common\Umul8.c
 [v ___bmul __bmul `(uc  1 e 1 0 ]
-"4 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\Umul8_16.c
+"4 D:\cx8\Microchip\xc8\v2.45\pic\sources\c99\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
-"6 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\pic\__eeprom.c
+"6 D:\cx8\Microchip\xc8\v2.45\pic\sources\c99\pic\__eeprom.c
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"69 C:\Users\rayzo\MPLABXProjects\SchermRotary.X\main.c
+"70 D:\scherm\HCMS29XX-lang-lib\SchermRotary.X\main.c
 [v _main main `(i  1 e 2 0 ]
-"90
+"91
 [v _pic_init pic_init `(v  1 e 1 0 ]
-"99
+"100
 [v _init_osc init_osc `(v  1 e 1 0 ]
-"106
+"107
 [v _ports_init ports_init `(v  1 e 1 0 ]
-"123
+"124
 [v _pins_init pins_init `(v  1 e 1 0 ]
-"130
+"131
 [v _interrupt_init interrupt_init `(v  1 e 1 0 ]
-"141
+"142
 [v _adc_init adc_init `(v  1 e 1 0 ]
-"151
+"152
 [v _volume_conversion volume_conversion `(v  1 e 1 0 ]
-"199
+"200
 [v _input_conversion input_conversion `(v  1 e 1 0 ]
-"205
+"206
 [v _rotaryHandeling rotaryHandeling `(v  1 e 1 0 ]
-"244
+"245
 [v _ISR ISR `II(v  1 e 1 0 ]
-"3 C:\Users\rayzo\MPLABXProjects\SchermRotary.X\scherm.c
+"3 D:\scherm\HCMS29XX-lang-lib\SchermRotary.X\scherm.c
 [v _scherm_init scherm_init `(v  1 e 1 0 ]
 "70
 [v _send_buffer send_buffer `(v  1 e 1 0 ]
@@ -99,19 +99,19 @@ CKE1_CPHA0_TRSMIT_ACT2IDL 1
 [v _load_buffer load_buffer `(v  1 e 1 0 ]
 "110
 [v _text_to_buffer text_to_buffer `(v  1 e 1 0 ]
-"14 C:\Users\rayzo\MPLABXProjects\SchermRotary.X\spi.c
+"14 D:\scherm\HCMS29XX-lang-lib\SchermRotary.X\spi.c
 [v _spi_init spi_init `(v  1 e 1 0 ]
 "58
 [v _spi_transmit spi_transmit `(v  1 e 1 0 ]
-"10 C:\Users\rayzo\MPLABXProjects\SchermRotary.X/ascii.h
+"10 D:\scherm\HCMS29XX-lang-lib\SchermRotary.X/ascii.h
 [v _ascii ascii `DC[128][5]uc  1 e 640 0 ]
 "140
 [v _adcBounds adcBounds `DC[42]i  1 e 84 0 ]
-"33 C:\Users\rayzo\MPLABXProjects\SchermRotary.X/scherm.h
+"33 D:\scherm\HCMS29XX-lang-lib\SchermRotary.X/scherm.h
 [v _scherm1_buffer scherm1_buffer `[40]uc  1 e 40 0 ]
 "34
 [v _scherm2_buffer scherm2_buffer `[40]uc  1 e 40 0 ]
-"166 C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f887.h
+"166 D:/MPLABX/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f887.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
 "228
 [v _PORTB PORTB `VEuc  1 e 1 @6 ]
@@ -129,7 +129,7 @@ CKE1_CPHA0_TRSMIT_ACT2IDL 1
 [v _PORTBbits PORTBbits `VES371  1 e 1 @6 ]
 "290
 [v _PORTC PORTC `VEuc  1 e 1 @7 ]
-[s S503 . 1 `uc 1 RC0 1 0 :1:0 
+[s S511 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 RC3 1 0 :1:3 
@@ -139,11 +139,11 @@ CKE1_CPHA0_TRSMIT_ACT2IDL 1
 `uc 1 RC7 1 0 :1:7 
 ]
 "307
-[u S512 . 1 `S503 1 . 1 0 ]
-[v _PORTCbits PORTCbits `VES512  1 e 1 @7 ]
+[u S520 . 1 `S511 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES520  1 e 1 @7 ]
 "352
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
-[s S524 . 1 `uc 1 RD0 1 0 :1:0 
+[s S532 . 1 `uc 1 RD0 1 0 :1:0 
 `uc 1 RD1 1 0 :1:1 
 `uc 1 RD2 1 0 :1:2 
 `uc 1 RD3 1 0 :1:3 
@@ -153,8 +153,8 @@ CKE1_CPHA0_TRSMIT_ACT2IDL 1
 `uc 1 RD7 1 0 :1:7 
 ]
 "369
-[u S533 . 1 `S524 1 . 1 0 ]
-[v _PORTDbits PORTDbits `VES533  1 e 1 @8 ]
+[u S541 . 1 `S532 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES541  1 e 1 @8 ]
 "414
 [v _PORTE PORTE `VEuc  1 e 1 @9 ]
 [s S192 . 1 `uc 1 RBIF 1 0 :1:0 
@@ -187,20 +187,20 @@ CKE1_CPHA0_TRSMIT_ACT2IDL 1
 [v _PIR1bits PIR1bits `VES251  1 e 1 @12 ]
 "843
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
-[s S613 . 1 `uc 1 SSPM 1 0 :4:0 
+[s S623 . 1 `uc 1 SSPM 1 0 :4:0 
 `uc 1 CKP 1 0 :1:4 
 `uc 1 SSPEN 1 0 :1:5 
 `uc 1 SSPOV 1 0 :1:6 
 `uc 1 WCOL 1 0 :1:7 
 ]
 "870
-[s S619 . 1 `uc 1 SSPM0 1 0 :1:0 
+[s S629 . 1 `uc 1 SSPM0 1 0 :1:0 
 `uc 1 SSPM1 1 0 :1:1 
 `uc 1 SSPM2 1 0 :1:2 
 `uc 1 SSPM3 1 0 :1:3 
 ]
-[u S624 . 1 `S613 1 . 1 0 `S619 1 . 1 0 ]
-[v _SSPCONbits SSPCONbits `VES624  1 e 1 @20 ]
+[u S634 . 1 `S623 1 . 1 0 `S629 1 . 1 0 ]
+[v _SSPCONbits SSPCONbits `VES634  1 e 1 @20 ]
 "1238
 [v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
 [s S288 . 1 `uc 1 ADON 1 0 :1:0 
@@ -244,7 +244,7 @@ CKE1_CPHA0_TRSMIT_ACT2IDL 1
 [v _TRISBbits TRISBbits `VES180  1 e 1 @134 ]
 "1540
 [v _TRISC TRISC `VEuc  1 e 1 @135 ]
-[s S639 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S649 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -254,8 +254,8 @@ CKE1_CPHA0_TRSMIT_ACT2IDL 1
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "1557
-[u S648 . 1 `S639 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES648  1 e 1 @135 ]
+[u S658 . 1 `S649 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES658  1 e 1 @135 ]
 "1602
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
 "1664
@@ -293,7 +293,7 @@ CKE1_CPHA0_TRSMIT_ACT2IDL 1
 ]
 [u S110 . 1 `S99 1 . 1 0 `S105 1 . 1 0 ]
 [v _OSCCONbits OSCCONbits `VES110  1 e 1 @143 ]
-[s S660 . 1 `uc 1 BF 1 0 :1:0 
+[s S670 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -303,39 +303,39 @@ CKE1_CPHA0_TRSMIT_ACT2IDL 1
 `uc 1 SMP 1 0 :1:7 
 ]
 "2231
-[s S669 . 1 `uc 1 . 1 0 :2:0 
+[s S679 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D 1 0 :1:5 
 ]
-[s S674 . 1 `uc 1 . 1 0 :2:0 
+[s S684 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 I2C_READ 1 0 :1:2 
 `uc 1 I2C_START 1 0 :1:3 
 `uc 1 I2C_STOP 1 0 :1:4 
 `uc 1 I2C_DATA 1 0 :1:5 
 ]
-[s S680 . 1 `uc 1 . 1 0 :2:0 
+[s S690 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA 1 0 :1:5 
 ]
-[s S685 . 1 `uc 1 . 1 0 :2:0 
+[s S695 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS 1 0 :1:5 
 ]
-[s S690 . 1 `uc 1 . 1 0 :2:0 
+[s S700 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A 1 0 :1:5 
 ]
-[s S695 . 1 `uc 1 . 1 0 :2:0 
+[s S705 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 READ_WRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 DATA_ADDRESS 1 0 :1:5 
 ]
-[u S700 . 1 `S660 1 . 1 0 `S669 1 . 1 0 `S674 1 . 1 0 `S680 1 . 1 0 `S685 1 . 1 0 `S690 1 . 1 0 `S695 1 . 1 0 ]
-[v _SSPSTATbits SSPSTATbits `VES700  1 e 1 @148 ]
+[u S710 . 1 `S670 1 . 1 0 `S679 1 . 1 0 `S684 1 . 1 0 `S690 1 . 1 0 `S695 1 . 1 0 `S700 1 . 1 0 `S705 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES710  1 e 1 @148 ]
 [s S262 . 1 `uc 1 IOCB 1 0 :8:0 
 ]
 "2436
@@ -379,61 +379,61 @@ CKE1_CPHA0_TRSMIT_ACT2IDL 1
 [v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
 "3903
 [v _GO GO `VEb  1 e 0 @249 ]
-"63 C:\Users\rayzo\MPLABXProjects\SchermRotary.X\main.c
+"64 D:\scherm\HCMS29XX-lang-lib\SchermRotary.X\main.c
 [v _volume volume `i  1 e 2 0 ]
-"64
-[v _count count `i  1 e 2 0 ]
 "65
-[v _miniCount miniCount `i  1 e 2 0 ]
+[v _count count `i  1 e 2 0 ]
 "66
+[v _miniCount miniCount `i  1 e 2 0 ]
+"67
 [v _switchLeds switchLeds `i  1 e 2 0 ]
-"69
+"70
 [v _main main `(i  1 e 2 0 ]
 {
-"75
+"76
 [v main@screen1 screen1 `[8]uc  1 a 8 51 ]
-"73
-[v main@screen2 screen2 `[8]uc  1 a 8 43 ]
-"72
-[v main@F1490 F1490 `[8]uc  1 s 8 F1490 ]
 "74
-[v main@F1492 F1492 `[8]uc  1 s 8 F1492 ]
-"88
+[v main@screen2 screen2 `[8]uc  1 a 8 43 ]
+"73
+[v main@F1498 F1498 `[8]uc  1 s 8 F1498 ]
+"75
+[v main@F1500 F1500 `[8]uc  1 s 8 F1500 ]
+"89
 } 0
-"151
+"152
 [v _volume_conversion volume_conversion `(v  1 e 1 0 ]
 {
-"186
+"187
 [v volume_conversion@i i `i  1 a 2 32 ]
-"153
-[v volume_conversion@buffer buffer `[2]uc  1 a 2 30 ]
 "154
+[v volume_conversion@buffer buffer `[2]uc  1 a 2 30 ]
+"155
 [v volume_conversion@value value `uc  1 a 1 34 ]
-"197
+"198
 } 0
-"110 C:\Users\rayzo\MPLABXProjects\SchermRotary.X\scherm.c
+"110 D:\scherm\HCMS29XX-lang-lib\SchermRotary.X\scherm.c
 [v _text_to_buffer text_to_buffer `(v  1 e 1 0 ]
 {
-[v text_to_buffer@scherm scherm `E1453  1 a 1 wreg ]
+[v text_to_buffer@scherm scherm `E1455  1 a 1 wreg ]
 "111
 [v text_to_buffer@i i `i  1 a 2 33 ]
 "110
-[v text_to_buffer@scherm scherm `E1453  1 a 1 wreg ]
+[v text_to_buffer@scherm scherm `E1455  1 a 1 wreg ]
 [v text_to_buffer@newtext newtext `*.4uc  1 p 1 30 ]
-[v text_to_buffer@scherm scherm `E1453  1 a 1 32 ]
+[v text_to_buffer@scherm scherm `E1455  1 a 1 32 ]
 "114
 } 0
 "70
 [v _send_buffer send_buffer `(v  1 e 1 0 ]
 {
-[v send_buffer@scherm scherm `E1453  1 a 1 wreg ]
+[v send_buffer@scherm scherm `E1455  1 a 1 wreg ]
 "83
-[v send_buffer@i_585 i `i  1 a 2 11 ]
+[v send_buffer@i_595 i `i  1 a 2 11 ]
 "74
 [v send_buffer@i i `i  1 a 2 9 ]
 "70
-[v send_buffer@scherm scherm `E1453  1 a 1 wreg ]
-[v send_buffer@scherm scherm `E1453  1 a 1 8 ]
+[v send_buffer@scherm scherm `E1455  1 a 1 wreg ]
+[v send_buffer@scherm scherm `E1455  1 a 1 8 ]
 "89
 } 0
 "3
@@ -451,7 +451,7 @@ CKE1_CPHA0_TRSMIT_ACT2IDL 1
 [v scherm_init@helderheid helderheid `uc  1 a 1 10 ]
 "68
 } 0
-"58 C:\Users\rayzo\MPLABXProjects\SchermRotary.X\spi.c
+"58 D:\scherm\HCMS29XX-lang-lib\SchermRotary.X\spi.c
 [v _spi_transmit spi_transmit `(v  1 e 1 0 ]
 {
 [v spi_transmit@c c `uc  1 a 1 wreg ]
@@ -460,12 +460,12 @@ CKE1_CPHA0_TRSMIT_ACT2IDL 1
 [v spi_transmit@c c `uc  1 a 1 6 ]
 "61
 } 0
-"90 C:\Users\rayzo\MPLABXProjects\SchermRotary.X\main.c
+"91 D:\scherm\HCMS29XX-lang-lib\SchermRotary.X\main.c
 [v _pic_init pic_init `(v  1 e 1 0 ]
 {
-"97
+"98
 } 0
-"14 C:\Users\rayzo\MPLABXProjects\SchermRotary.X\spi.c
+"14 D:\scherm\HCMS29XX-lang-lib\SchermRotary.X\spi.c
 [v _spi_init spi_init `(v  1 e 1 0 ]
 {
 [v spi_init@mst_slv_oscdiv mst_slv_oscdiv `E1420  1 a 1 wreg ]
@@ -477,56 +477,56 @@ CKE1_CPHA0_TRSMIT_ACT2IDL 1
 [v spi_init@mst_slv_oscdiv mst_slv_oscdiv `E1420  1 a 1 9 ]
 "56
 } 0
-"106 C:\Users\rayzo\MPLABXProjects\SchermRotary.X\main.c
+"107 D:\scherm\HCMS29XX-lang-lib\SchermRotary.X\main.c
 [v _ports_init ports_init `(v  1 e 1 0 ]
 {
-"121
+"122
 } 0
-"123
+"124
 [v _pins_init pins_init `(v  1 e 1 0 ]
 {
-"128
+"129
 } 0
-"130
+"131
 [v _interrupt_init interrupt_init `(v  1 e 1 0 ]
 {
-"139
+"140
 } 0
-"99
+"100
 [v _init_osc init_osc `(v  1 e 1 0 ]
 {
-"105
+"106
 } 0
-"141
+"142
 [v _adc_init adc_init `(v  1 e 1 0 ]
 {
-"148
+"149
 } 0
-"199
+"200
 [v _input_conversion input_conversion `(v  1 e 1 0 ]
 {
-"200
+"201
 [v input_conversion@input input `uc  1 a 1 30 ]
-"203
+"204
 } 0
-"91 C:\Users\rayzo\MPLABXProjects\SchermRotary.X\scherm.c
+"91 D:\scherm\HCMS29XX-lang-lib\SchermRotary.X\scherm.c
 [v _load_buffer load_buffer `(v  1 e 1 0 ]
 {
 [v load_buffer@character character `uc  1 a 1 wreg ]
 "103
-[v load_buffer@i_592 i `i  1 a 2 28 ]
+[v load_buffer@i_602 i `i  1 a 2 28 ]
 "98
-[v load_buffer@i_591 i `i  1 a 2 26 ]
+[v load_buffer@i_601 i `i  1 a 2 26 ]
 "93
 [v load_buffer@i i `i  1 a 2 24 ]
 "91
 [v load_buffer@character character `uc  1 a 1 wreg ]
 [v load_buffer@position position `i  1 p 2 12 ]
-[v load_buffer@scherm scherm `E1453  1 p 1 14 ]
+[v load_buffer@scherm scherm `E1455  1 p 1 14 ]
 [v load_buffer@character character `uc  1 a 1 23 ]
 "108
 } 0
-"15 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\Umul16.c
+"15 D:\cx8\Microchip\xc8\v2.45\pic\sources\c99\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
 {
 "17
@@ -536,7 +536,7 @@ CKE1_CPHA0_TRSMIT_ACT2IDL 1
 [v ___wmul@multiplicand multiplicand `ui  1 p 2 8 ]
 "53
 } 0
-"4 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\Umul8.c
+"4 D:\cx8\Microchip\xc8\v2.45\pic\sources\c99\common\Umul8.c
 [v ___bmul __bmul `(uc  1 e 1 0 ]
 {
 [v ___bmul@multiplier multiplier `uc  1 a 1 wreg ]
@@ -549,23 +549,23 @@ CKE1_CPHA0_TRSMIT_ACT2IDL 1
 [v ___bmul@multiplier multiplier `uc  1 a 1 8 ]
 "51
 } 0
-"244 C:\Users\rayzo\MPLABXProjects\SchermRotary.X\main.c
+"245 D:\scherm\HCMS29XX-lang-lib\SchermRotary.X\main.c
 [v _ISR ISR `II(v  1 e 1 0 ]
 {
-"246
-[v ISR@adcValue adcValue `i  1 a 2 4 ]
-"248
-[v ISR@lowerValue lowerValue `i  1 a 2 2 ]
 "247
+[v ISR@adcValue adcValue `i  1 a 2 4 ]
+"249
+[v ISR@lowerValue lowerValue `i  1 a 2 2 ]
+"248
 [v ISR@upperValue upperValue `i  1 a 2 0 ]
-"261
+"262
 } 0
-"205
+"206
 [v _rotaryHandeling rotaryHandeling `(v  1 e 1 0 ]
 {
-"206
-[v rotaryHandeling@state state `uc  1 a 1 3 ]
 "207
+[v rotaryHandeling@state state `uc  1 a 1 3 ]
+"208
 [v rotaryHandeling@oldstate oldstate `uc  1 s 1 oldstate ]
-"242
+"243
 } 0

@@ -47,6 +47,7 @@
 #include "spi.h"
 #include "ascii.h"
 #include "scherm.h"
+#include "asciiAHA.h"
 
 void pic_init(void);
 void init_osc(void);
