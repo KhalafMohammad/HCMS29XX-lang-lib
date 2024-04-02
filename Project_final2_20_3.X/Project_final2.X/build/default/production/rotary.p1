@@ -34,11 +34,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _INTCONbits `VS19 ~T0 @X0 0 e@11 ]
 "41 rotary.c
 [; ;rotary.c: 41:     load_buffer(num_of_lang, inputNew, 6, SCREEN_2);
-[c E1435 1 2 3 .. ]
-[n E1435 _Screen_ SCREEN_1 SCREEN_2 SCREEN_1_2  ]
-"39 ./scherm.h
-[; ;./scherm.h: 39: void load_buffer(int lang,char karakter, int pos, Screen scherm);
-[v _load_buffer `(v ~T0 @X0 0 ef4`i`uc`i`E1435 ]
+[c E1442 1 2 3 .. ]
+[n E1442 _Screen_ SCREEN_1 SCREEN_2 SCREEN_1_2  ]
+"35 ./scherm.h
+[; ;./scherm.h: 35: void load_buffer(int lang,char karakter, int pos, Screen scherm);
+[v _load_buffer `(v ~T0 @X0 0 ef4`i`uc`i`E1442 ]
 "54 D:/MPLABX/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f887.h
 [; ;D:/MPLABX/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f887.h: 54: __asm("INDF equ 00h");
 [; <" INDF equ 00h ;# ">
@@ -3931,11 +3931,23 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ..
 ]
-"45 ./scherm.h
-[; ;./scherm.h: 45: char scherm1_buffer[40];
+"14 ./remote.h
+[; ;./remote.h: 14: volatile long final_code;
+[v _final_code `Vl ~T0 @X0 1 e ]
+"15
+[; ;./remote.h: 15: int timeraan;
+[v _timeraan `i ~T0 @X0 1 e ]
+"16
+[; ;./remote.h: 16: volatile int remote_counter;
+[v _remote_counter `Vi ~T0 @X0 1 e ]
+"17
+[; ;./remote.h: 17: int motoraan;
+[v _motoraan `i ~T0 @X0 1 e ]
+"41 ./scherm.h
+[; ;./scherm.h: 41: char scherm1_buffer[40];
 [v _scherm1_buffer `uc ~T0 @X0 -> 40 `i e ]
-"46
-[; ;./scherm.h: 46: char scherm2_buffer[40];
+"42
+[; ;./scherm.h: 42: char scherm2_buffer[40];
 [v _scherm2_buffer `uc ~T0 @X0 -> 40 `i e ]
 "16 ./rotary.h
 [; ;./rotary.h: 16: unsigned char state;
@@ -4089,7 +4101,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _inputNew -> + -> -> _input `uc `i -> _nummerOffset `i `uc ]
 "41
 [; ;rotary.c: 41:     load_buffer(num_of_lang, inputNew, 6, SCREEN_2);
-[e ( _load_buffer (4 , , , _num_of_lang _inputNew -> 6 `i . `E1435 1 ]
+[e ( _load_buffer (4 , , , _num_of_lang _inputNew -> 6 `i . `E1442 1 ]
 "42
 [; ;rotary.c: 42: }
 [e :UE 153 ]

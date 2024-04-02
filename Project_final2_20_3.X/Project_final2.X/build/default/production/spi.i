@@ -8,7 +8,10 @@
 # 2 "<built-in>" 2
 # 1 "spi.c" 2
 # 1 "./spi.h" 1
-# 10 "./spi.h"
+
+
+
+
 # 1 "D:/MPLABX/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\\pic\\include\\xc.h" 1 3
 # 18 "D:/MPLABX/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2668,8 +2671,8 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "D:/MPLABX/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\\pic\\include\\xc.h" 2 3
-# 10 "./spi.h" 2
-# 53 "./spi.h"
+# 5 "./spi.h" 2
+# 48 "./spi.h"
 typedef enum {
     MST_OSC_DIV_04,
     MST_OSC_DIV_16,

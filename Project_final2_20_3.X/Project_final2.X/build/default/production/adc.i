@@ -12,7 +12,10 @@
 
 
 # 1 "./scherm.h" 1
-# 10 "./scherm.h"
+
+
+
+
 # 1 "D:/MPLABX/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\\pic\\include\\xc.h" 1 3
 # 18 "D:/MPLABX/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2672,7 +2675,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "D:/MPLABX/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\\pic\\include\\xc.h" 2 3
-# 10 "./scherm.h" 2
+# 5 "./scherm.h" 2
 
 # 1 "./ascii.h" 1
 
@@ -2807,7 +2810,7 @@ const char ascii[128][5]={
 {0x08,0x04,0x08,0x10,0x08},
 {0x2A,0x55,0x2A,0x55,0x2A}
 };
-# 11 "./scherm.h" 2
+# 6 "./scherm.h" 2
 
 # 1 "./global.h" 1
 
@@ -2824,7 +2827,7 @@ int miniCount = 3;
 int inputChanged = 1;
 char nummerOffset = '0';
 int num_of_lang = 0;
-# 12 "./scherm.h" 2
+# 7 "./scherm.h" 2
 
 # 1 "./asciiAHA.h" 1
 
@@ -3235,8 +3238,34 @@ const char aurebech[128][5] = {
         {0x08, 0x08, 0x00, 0x08, 0x08},
         {0x2A, 0x55, 0x2A, 0x55, 0x2A}
         };
-# 13 "./scherm.h" 2
-# 29 "./scherm.h"
+# 8 "./scherm.h" 2
+
+# 1 "./remote.h" 1
+
+
+
+
+
+
+# 1 "./scherm.h" 1
+# 7 "./remote.h" 2
+
+
+
+
+
+
+
+volatile long final_code;
+int timeraan;
+volatile int remote_counter;
+int motoraan;
+
+void remote_edge_handeling(void);
+void key_detection(void);
+void remote_timer_handeling(void);
+# 9 "./scherm.h" 2
+# 25 "./scherm.h"
 typedef enum _Screen_{
     SCREEN_1 = 1,
     SCREEN_2,

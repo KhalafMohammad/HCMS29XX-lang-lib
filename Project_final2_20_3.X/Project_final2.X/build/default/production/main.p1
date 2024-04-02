@@ -5,25 +5,25 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _pic_init `(v ~T0 @X0 0 ef ]
 "12 main.c
 [; ;main.c: 12:     spi_init(MST_OSC_DIV_04, SMP1_SDI_END, CKP0_CPOL0_IDLE_LOW, CKE1_CPHA0_TRSMIT_ACT2IDL);
-[c E1479 0 1 2 3 4 5 .. ]
-[n E1479 . MST_OSC_DIV_04 MST_OSC_DIV_16 MST_OSC_DIV_64 MST_OSC_DIV_T2 SLV_SS_EN SLV_SS_DIS  ]
-[c E1487 0 1 .. ]
-[n E1487 . SMP0_SDI_MIDDLE SMP1_SDI_END  ]
-[c E1491 0 1 .. ]
-[n E1491 . CKP0_CPOL0_IDLE_LOW CKP1_CPOL1_IDLE_HIGH  ]
-[c E1495 0 1 .. ]
-[n E1495 . CKE0_CPHA1_TRSMIT_IDL2ACT CKE1_CPHA0_TRSMIT_ACT2IDL  ]
-"79 ./spi.h
-[; ;./spi.h: 79: void spi_init(sspmode mst_slv_oscdiv, rxsmpmoment sdi_rx_smp, clkpol clock_pol, txclkedge sdo_tx_edge);
-[v _spi_init `(v ~T0 @X0 0 ef4`E1479`E1487`E1491`E1495 ]
-"35 ./scherm.h
-[; ;./scherm.h: 35: void scherm_init(char helderheid);
+[c E1486 0 1 2 3 4 5 .. ]
+[n E1486 . MST_OSC_DIV_04 MST_OSC_DIV_16 MST_OSC_DIV_64 MST_OSC_DIV_T2 SLV_SS_EN SLV_SS_DIS  ]
+[c E1494 0 1 .. ]
+[n E1494 . SMP0_SDI_MIDDLE SMP1_SDI_END  ]
+[c E1498 0 1 .. ]
+[n E1498 . CKP0_CPOL0_IDLE_LOW CKP1_CPOL1_IDLE_HIGH  ]
+[c E1502 0 1 .. ]
+[n E1502 . CKE0_CPHA1_TRSMIT_IDL2ACT CKE1_CPHA0_TRSMIT_ACT2IDL  ]
+"74 ./spi.h
+[; ;./spi.h: 74: void spi_init(sspmode mst_slv_oscdiv, rxsmpmoment sdi_rx_smp, clkpol clock_pol, txclkedge sdo_tx_edge);
+[v _spi_init `(v ~T0 @X0 0 ef4`E1486`E1494`E1498`E1502 ]
+"31 ./scherm.h
+[; ;./scherm.h: 31: void scherm_init(char helderheid);
 [v _scherm_init `(v ~T0 @X0 0 ef1`uc ]
-"36
-[; ;./scherm.h: 36: void scherm_setup(void);
+"32
+[; ;./scherm.h: 32: void scherm_setup(void);
 [v _scherm_setup `(v ~T0 @X0 0 ef ]
-"25 ./remote.h
-[; ;./remote.h: 25: void key_detection(void);
+"20 ./remote.h
+[; ;./remote.h: 20: void key_detection(void);
 [v _key_detection `(v ~T0 @X0 0 ef ]
 "11 ./rotary.h
 [; ;./rotary.h: 11: void input_conversion(void);
@@ -33,11 +33,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _PORTA `Vuc ~T0 @X0 0 e@5 ]
 "24 main.c
 [; ;main.c: 24:             send_buffer(SCREEN_2);
-[c E1442 1 2 3 .. ]
-[n E1442 _Screen_ SCREEN_1 SCREEN_2 SCREEN_1_2  ]
-"38 ./scherm.h
-[; ;./scherm.h: 38: void send_buffer(Screen scherm);
-[v _send_buffer `(v ~T0 @X0 0 ef1`E1442 ]
+[c E1449 1 2 3 .. ]
+[n E1449 _Screen_ SCREEN_1 SCREEN_2 SCREEN_1_2  ]
+"34 ./scherm.h
+[; ;./scherm.h: 34: void send_buffer(Screen scherm);
+[v _send_buffer `(v ~T0 @X0 0 ef1`E1449 ]
 "16 ./adc.h
 [; ;./adc.h: 16: void volume_conversion(void);
 [v _volume_conversion `(v ~T0 @X0 0 ef ]
@@ -61,8 +61,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "482
 [; ;D:/MPLABX/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f887.h: 482: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
 [v _INTCONbits `VS19 ~T0 @X0 0 e@11 ]
-"24 ./remote.h
-[; ;./remote.h: 24: void remote_edge_handeling(void);
+"19 ./remote.h
+[; ;./remote.h: 19: void remote_edge_handeling(void);
 [v _remote_edge_handeling `(v ~T0 @X0 0 ef ]
 "543 D:/MPLABX/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f887.h
 [; ;D:/MPLABX/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f887.h: 543:     struct {
@@ -75,8 +75,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "553
 [; ;D:/MPLABX/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f887.h: 553: extern volatile PIR1bits_t PIR1bits __attribute__((address(0x00C)));
 [v _PIR1bits `VS22 ~T0 @X0 0 e@12 ]
-"26 ./remote.h
-[; ;./remote.h: 26: void remote_timer_handeling(void);
+"21 ./remote.h
+[; ;./remote.h: 21: void remote_timer_handeling(void);
 [v _remote_timer_handeling `(v ~T0 @X0 0 ef ]
 "15 ./adc.h
 [; ;./adc.h: 15: void adcHandeling(void);
@@ -4002,11 +4002,23 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ..
 ]
-"45 ./scherm.h
-[; ;./scherm.h: 45: char scherm1_buffer[40];
+"14 ./remote.h
+[; ;./remote.h: 14: volatile long final_code;
+[v _final_code `Vl ~T0 @X0 1 e ]
+"15
+[; ;./remote.h: 15: int timeraan;
+[v _timeraan `i ~T0 @X0 1 e ]
+"16
+[; ;./remote.h: 16: volatile int remote_counter;
+[v _remote_counter `Vi ~T0 @X0 1 e ]
+"17
+[; ;./remote.h: 17: int motoraan;
+[v _motoraan `i ~T0 @X0 1 e ]
+"41 ./scherm.h
+[; ;./scherm.h: 41: char scherm1_buffer[40];
 [v _scherm1_buffer `uc ~T0 @X0 -> 40 `i e ]
-"46
-[; ;./scherm.h: 46: char scherm2_buffer[40];
+"42
+[; ;./scherm.h: 42: char scherm2_buffer[40];
 [v _scherm2_buffer `uc ~T0 @X0 -> 40 `i e ]
 "10 ./adc.h
 [; ;./adc.h: 10: const int adcBounds[42] = {0 , 25 , 50 , 75 , 100, 125, 150, 175, 200, 225, 250,
@@ -4074,18 +4086,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 247 `i `uc
 ..
 ]
-"19 ./remote.h
-[; ;./remote.h: 19: volatile long final_code;
-[v _final_code `Vl ~T0 @X0 1 e ]
-"20
-[; ;./remote.h: 20: int timeraan;
-[v _timeraan `i ~T0 @X0 1 e ]
-"21
-[; ;./remote.h: 21: volatile int remote_counter;
-[v _remote_counter `Vi ~T0 @X0 1 e ]
-"22
-[; ;./remote.h: 22: int motoraan;
-[v _motoraan `i ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
 "9 main.c
 [; ;main.c: 9: int main(int argc, char** argv) {
@@ -4100,7 +4100,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _pic_init ..  ]
 "12
 [; ;main.c: 12:     spi_init(MST_OSC_DIV_04, SMP1_SDI_END, CKP0_CPOL0_IDLE_LOW, CKE1_CPHA0_TRSMIT_ACT2IDL);
-[e ( _spi_init (4 , , , . `E1479 0 . `E1487 1 . `E1491 0 . `E1495 1 ]
+[e ( _spi_init (4 , , , . `E1486 0 . `E1494 1 . `E1498 0 . `E1502 1 ]
 "13
 [; ;main.c: 13:     char helderheid = 15;
 [v _helderheid `uc ~T0 @X0 1 a ]
@@ -4138,7 +4138,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _PORTA -> *U + &U _inputLeds * -> -> - _input -> 1 `i `ui `ux -> -> # *U &U _inputLeds `ui `ux `uc ]
 "24
 [; ;main.c: 24:             send_buffer(SCREEN_2);
-[e ( _send_buffer (1 . `E1442 1 ]
+[e ( _send_buffer (1 . `E1449 1 ]
 "25
 [; ;main.c: 25:             inputChanged = 0;
 [e = _inputChanged -> 0 `i ]
@@ -4155,7 +4155,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _volume_conversion ..  ]
 "29
 [; ;main.c: 29:             send_buffer(SCREEN_1);
-[e ( _send_buffer (1 . `E1442 0 ]
+[e ( _send_buffer (1 . `E1449 0 ]
 "30
 [; ;main.c: 30:             volumeOud = volume;
 [e = _volumeOud _volume ]

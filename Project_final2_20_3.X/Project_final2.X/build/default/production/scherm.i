@@ -8,7 +8,10 @@
 # 2 "<built-in>" 2
 # 1 "scherm.c" 2
 # 1 "./scherm.h" 1
-# 10 "./scherm.h"
+
+
+
+
 # 1 "D:/MPLABX/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\\pic\\include\\xc.h" 1 3
 # 18 "D:/MPLABX/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2668,7 +2671,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "D:/MPLABX/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\\pic\\include\\xc.h" 2 3
-# 10 "./scherm.h" 2
+# 5 "./scherm.h" 2
 
 # 1 "./ascii.h" 1
 
@@ -2803,7 +2806,7 @@ const char ascii[128][5]={
 {0x08,0x04,0x08,0x10,0x08},
 {0x2A,0x55,0x2A,0x55,0x2A}
 };
-# 11 "./scherm.h" 2
+# 6 "./scherm.h" 2
 
 # 1 "./global.h" 1
 
@@ -2820,7 +2823,7 @@ int miniCount = 3;
 int inputChanged = 1;
 char nummerOffset = '0';
 int num_of_lang = 0;
-# 12 "./scherm.h" 2
+# 7 "./scherm.h" 2
 
 # 1 "./asciiAHA.h" 1
 
@@ -3231,8 +3234,34 @@ const char aurebech[128][5] = {
         {0x08, 0x08, 0x00, 0x08, 0x08},
         {0x2A, 0x55, 0x2A, 0x55, 0x2A}
         };
-# 13 "./scherm.h" 2
-# 29 "./scherm.h"
+# 8 "./scherm.h" 2
+
+# 1 "./remote.h" 1
+
+
+
+
+
+
+# 1 "./scherm.h" 1
+# 7 "./remote.h" 2
+
+
+
+
+
+
+
+volatile long final_code;
+int timeraan;
+volatile int remote_counter;
+int motoraan;
+
+void remote_edge_handeling(void);
+void key_detection(void);
+void remote_timer_handeling(void);
+# 9 "./scherm.h" 2
+# 25 "./scherm.h"
 typedef enum _Screen_{
     SCREEN_1 = 1,
     SCREEN_2,
@@ -3328,12 +3357,6 @@ void scherm_setup() {
     text_to_buffer(SCREEN_1, screen1);
 }
 
-void scherm_setup_lang(void) {
-    char screen2[6] = "INPUT:";
-    text_to_buffer_input(SCREEN_2, screen2);
-    char screen1[6] = "VOL:";
-    text_to_buffer_vol(SCREEN_1, screen1);
-}
 
 void send_buffer(Screen scherm) {
     if (scherm == SCREEN_1) {
@@ -3429,17 +3452,6 @@ void text_to_buffer(Screen scherm, char newtext[]) {
     }
 }
 
-void text_to_buffer_vol(Screen scherm, char newtext[]) {
-    for (int i = 0; i < 6; i++) {
-        load_buffer(num_of_lang, newtext[i], i, scherm);
-    }
-}
-
-void text_to_buffer_input(Screen scherm, char newtext[]) {
-    for (int i = 0; i < 6; i++) {
-        load_buffer(num_of_lang, newtext[i], i, scherm);
-    }
-}
 
 void screen_transmit(char c) {
 

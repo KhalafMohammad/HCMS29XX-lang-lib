@@ -81,7 +81,7 @@ void key_detection(void) {
             input = 4; //key 9, is input 4
             inputChanged = 1;
             scherm_setup(); //change language
-            send_buffer();
+            send_buffer(SCREEN_1);
         }
 
         temp_code = final_code & 0b010010000100; // display key 10

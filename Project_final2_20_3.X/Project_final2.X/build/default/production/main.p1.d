@@ -6,6 +6,6 @@ adc.h  \
 scherm.h  \
 ascii.h  \
 asciiAHA.h  \
+remote.h  \
 rotary.h  \
-spi.h  \
-remote.h 
+spi.h 

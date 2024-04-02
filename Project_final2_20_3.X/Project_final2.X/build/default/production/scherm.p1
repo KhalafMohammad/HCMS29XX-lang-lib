@@ -25,22 +25,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 "12 D:/MPLABX/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\builtins.h
 [v __delay `JF164 ~T0 @X0 0 e ]
 [p i __delay ]
-"43 ./scherm.h
-[; ;./scherm.h: 43: void screen_transmit(char c);
+"39 ./scherm.h
+[; ;./scherm.h: 39: void screen_transmit(char c);
 [v _screen_transmit `(v ~T0 @X0 0 ef1`uc ]
 "72 scherm.c
 [; ;scherm.c: 72:     text_to_buffer(SCREEN_2, screen2);
-[c E1435 1 2 3 .. ]
-[n E1435 _Screen_ SCREEN_1 SCREEN_2 SCREEN_1_2  ]
-"40 ./scherm.h
-[; ;./scherm.h: 40: void text_to_buffer(Screen scherm, char newtext[]);
-[v _text_to_buffer `(v ~T0 @X0 0 ef2`E1435`*uc ]
-"41
-[; ;./scherm.h: 41: void text_to_buffer_input(Screen scherm, char newtext[]);
-[v _text_to_buffer_input `(v ~T0 @X0 0 ef2`E1435`*uc ]
-"42
-[; ;./scherm.h: 42: void text_to_buffer_vol(Screen scherm, char newtext[]);
-[v _text_to_buffer_vol `(v ~T0 @X0 0 ef2`E1435`*uc ]
+[c E1442 1 2 3 .. ]
+[n E1442 _Screen_ SCREEN_1 SCREEN_2 SCREEN_1_2  ]
+"36 ./scherm.h
+[; ;./scherm.h: 36: void text_to_buffer(Screen scherm, char newtext[]);
+[v _text_to_buffer `(v ~T0 @X0 0 ef2`E1442`*uc ]
 "843 D:/MPLABX/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f887.h
 [; ;D:/MPLABX/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f887.h: 843: extern volatile unsigned char SSPBUF __attribute__((address(0x013)));
 [v _SSPBUF `Vuc ~T0 @X0 0 e@19 ]
@@ -3936,11 +3930,23 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ..
 ]
-"45 ./scherm.h
-[; ;./scherm.h: 45: char scherm1_buffer[40];
+"14 ./remote.h
+[; ;./remote.h: 14: volatile long final_code;
+[v _final_code `Vl ~T0 @X0 1 e ]
+"15
+[; ;./remote.h: 15: int timeraan;
+[v _timeraan `i ~T0 @X0 1 e ]
+"16
+[; ;./remote.h: 16: volatile int remote_counter;
+[v _remote_counter `Vi ~T0 @X0 1 e ]
+"17
+[; ;./remote.h: 17: int motoraan;
+[v _motoraan `i ~T0 @X0 1 e ]
+"41 ./scherm.h
+[; ;./scherm.h: 41: char scherm1_buffer[40];
 [v _scherm1_buffer `uc ~T0 @X0 -> 40 `i e ]
-"46
-[; ;./scherm.h: 46: char scherm2_buffer[40];
+"42
+[; ;./scherm.h: 42: char scherm2_buffer[40];
 [v _scherm2_buffer `uc ~T0 @X0 -> 40 `i e ]
 "3 scherm.c
 [; ;scherm.c: 3: void scherm_init(char helderheid) {
@@ -4114,8 +4120,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _scherm_setup ]
 [f ]
-[v F1470 `uc ~T0 @X0 -> 8 `i s ]
-[i F1470
+[v F1477 `uc ~T0 @X0 -> 8 `i s ]
+[i F1477
 :U ..
 "71
 [; ;scherm.c: 71:     char screen2[8] = "INPUT:0 ";
@@ -4130,12 +4136,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _screen2 `uc ~T0 @X0 -> 8 `i a ]
-[e = _screen2 F1470 ]
+[e = _screen2 F1477 ]
 "72
 [; ;scherm.c: 72:     text_to_buffer(SCREEN_2, screen2);
-[e ( _text_to_buffer (2 , . `E1435 1 &U _screen2 ]
-[v F1472 `uc ~T0 @X0 -> 8 `i s ]
-[i F1472
+[e ( _text_to_buffer (2 , . `E1442 1 &U _screen2 ]
+[v F1479 `uc ~T0 @X0 -> 8 `i s ]
+[i F1479
 :U ..
 "73
 [; ;scherm.c: 73:     char screen1[8] = "VOL:0   ";
@@ -4150,634 +4156,527 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _screen1 `uc ~T0 @X0 -> 8 `i a ]
-[e = _screen1 F1472 ]
+[e = _screen1 F1479 ]
 "74
 [; ;scherm.c: 74:     text_to_buffer(SCREEN_1, screen1);
-[e ( _text_to_buffer (2 , . `E1435 0 &U _screen1 ]
+[e ( _text_to_buffer (2 , . `E1442 0 &U _screen1 ]
 "75
 [; ;scherm.c: 75: }
 [e :UE 147 ]
 }
-"77
-[; ;scherm.c: 77: void scherm_setup_lang(void) {
-[v _scherm_setup_lang `(v ~T0 @X0 1 ef ]
-{
-[e :U _scherm_setup_lang ]
-[f ]
-[v F1475 `uc ~T0 @X0 -> 6 `i s ]
-[i F1475
-:U ..
 "78
-[; ;scherm.c: 78:     char screen2[6] = "INPUT:";
--> 73 `c
--> 78 `c
--> 80 `c
--> 85 `c
--> 84 `c
--> 58 `c
-..
-]
-[v _screen2 `uc ~T0 @X0 -> 6 `i a ]
-[e = _screen2 F1475 ]
-"79
-[; ;scherm.c: 79:     text_to_buffer_input(SCREEN_2, screen2);
-[e ( _text_to_buffer_input (2 , . `E1435 1 &U _screen2 ]
-[v F1477 `uc ~T0 @X0 -> 6 `i s ]
-[i F1477
-:U ..
-"80
-[; ;scherm.c: 80:     char screen1[6] = "VOL:";
--> 86 `c
--> 79 `c
--> 76 `c
--> 58 `c
--> 0 `c
-..
-]
-[v _screen1 `uc ~T0 @X0 -> 6 `i a ]
-[e = _screen1 F1477 ]
-"81
-[; ;scherm.c: 81:     text_to_buffer_vol(SCREEN_1, screen1);
-[e ( _text_to_buffer_vol (2 , . `E1435 0 &U _screen1 ]
-"82
-[; ;scherm.c: 82: }
-[e :UE 148 ]
-}
-"84
-[; ;scherm.c: 84: void send_buffer(Screen scherm) {
-[v _send_buffer `(v ~T0 @X0 1 ef1`E1435 ]
+[; ;scherm.c: 78: void send_buffer(Screen scherm) {
+[v _send_buffer `(v ~T0 @X0 1 ef1`E1442 ]
 {
 [e :U _send_buffer ]
-[v _scherm `E1435 ~T0 @X0 1 r1 ]
+[v _scherm `E1442 ~T0 @X0 1 r1 ]
 [f ]
-"85
-[; ;scherm.c: 85:     if (scherm == SCREEN_1) {
-[e $ ! == -> _scherm `ui -> . `E1435 0 `ui 150  ]
+"79
+[; ;scherm.c: 79:     if (scherm == SCREEN_1) {
+[e $ ! == -> _scherm `ui -> . `E1442 0 `ui 149  ]
 {
-"86
-[; ;scherm.c: 86:         PORTCbits.RC4 = 0;
+"80
+[; ;scherm.c: 80:         PORTCbits.RC4 = 0;
 [e = . . _PORTCbits 0 4 -> -> 0 `i `uc ]
-"88
-[; ;scherm.c: 88:         for (int i = 0; i < 40; i++) {
+"82
+[; ;scherm.c: 82:         for (int i = 0; i < 40; i++) {
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 40 `i 151  ]
-[e $U 152  ]
-[e :U 151 ]
-{
-"89
-[; ;scherm.c: 89:             screen_transmit(scherm1_buffer[i]);
-[e ( _screen_transmit (1 *U + &U _scherm1_buffer * -> -> _i `ui `ux -> -> # *U &U _scherm1_buffer `ui `ux ]
-"90
-[; ;scherm.c: 90:         }
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 40 `i 151  ]
-[e :U 152 ]
-}
-"91
-[; ;scherm.c: 91:         _delay((unsigned long)((200)*(500000/4000000.0)));
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 500000 `l `d .4000000.0 `ul ]
-"92
-[; ;scherm.c: 92:         PORTCbits.RC4 = 1;
-[e = . . _PORTCbits 0 4 -> -> 1 `i `uc ]
-"93
-[; ;scherm.c: 93:     } else if (scherm == SCREEN_2) {
-}
-[e $U 154  ]
+[e $ < _i -> 40 `i 150  ]
+[e $U 151  ]
 [e :U 150 ]
-[e $ ! == -> _scherm `ui -> . `E1435 1 `ui 155  ]
 {
-"94
-[; ;scherm.c: 94:         PORTDbits.RD4 = 0;
+"83
+[; ;scherm.c: 83:             screen_transmit(scherm1_buffer[i]);
+[e ( _screen_transmit (1 *U + &U _scherm1_buffer * -> -> _i `ui `ux -> -> # *U &U _scherm1_buffer `ui `ux ]
+"84
+[; ;scherm.c: 84:         }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 40 `i 150  ]
+[e :U 151 ]
+}
+"85
+[; ;scherm.c: 85:         _delay((unsigned long)((200)*(500000/4000000.0)));
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 500000 `l `d .4000000.0 `ul ]
+"86
+[; ;scherm.c: 86:         PORTCbits.RC4 = 1;
+[e = . . _PORTCbits 0 4 -> -> 1 `i `uc ]
+"87
+[; ;scherm.c: 87:     } else if (scherm == SCREEN_2) {
+}
+[e $U 153  ]
+[e :U 149 ]
+[e $ ! == -> _scherm `ui -> . `E1442 1 `ui 154  ]
+{
+"88
+[; ;scherm.c: 88:         PORTDbits.RD4 = 0;
 [e = . . _PORTDbits 0 4 -> -> 0 `i `uc ]
-"96
-[; ;scherm.c: 96:         for (int i = 0; i < 40; i++) {
+"90
+[; ;scherm.c: 90:         for (int i = 0; i < 40; i++) {
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 40 `i 156  ]
-[e $U 157  ]
-[e :U 156 ]
+[e $ < _i -> 40 `i 155  ]
+[e $U 156  ]
+[e :U 155 ]
 {
-"97
-[; ;scherm.c: 97:             screen_transmit(scherm2_buffer[i]);
+"91
+[; ;scherm.c: 91:             screen_transmit(scherm2_buffer[i]);
 [e ( _screen_transmit (1 *U + &U _scherm2_buffer * -> -> _i `ui `ux -> -> # *U &U _scherm2_buffer `ui `ux ]
-"98
-[; ;scherm.c: 98:         }
+"92
+[; ;scherm.c: 92:         }
 }
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 40 `i 156  ]
-[e :U 157 ]
+[e $ < _i -> 40 `i 155  ]
+[e :U 156 ]
 }
-"99
-[; ;scherm.c: 99:         _delay((unsigned long)((200)*(500000/4000000.0)));
+"93
+[; ;scherm.c: 93:         _delay((unsigned long)((200)*(500000/4000000.0)));
 [e ( __delay (1 -> * -> -> 200 `i `d / -> -> 500000 `l `d .4000000.0 `ul ]
-"100
-[; ;scherm.c: 100:         PORTDbits.RD4 = 1;
+"94
+[; ;scherm.c: 94:         PORTDbits.RD4 = 1;
 [e = . . _PORTDbits 0 4 -> -> 1 `i `uc ]
-"101
-[; ;scherm.c: 101:     }
+"95
+[; ;scherm.c: 95:     }
 }
-[e :U 155 ]
 [e :U 154 ]
-"102
-[; ;scherm.c: 102: }
-[e :UE 149 ]
+[e :U 153 ]
+"96
+[; ;scherm.c: 96: }
+[e :UE 148 ]
 }
-"104
-[; ;scherm.c: 104: void load_buffer(int lang, char character, int position, Screen scherm) {
-[v _load_buffer `(v ~T0 @X0 1 ef4`i`uc`i`E1435 ]
+"98
+[; ;scherm.c: 98: void load_buffer(int lang, char character, int position, Screen scherm) {
+[v _load_buffer `(v ~T0 @X0 1 ef4`i`uc`i`E1442 ]
 {
 [e :U _load_buffer ]
 [v _lang `i ~T0 @X0 1 r1 ]
 [v _character `uc ~T0 @X0 1 r2 ]
 [v _position `i ~T0 @X0 1 r3 ]
-[v _scherm `E1435 ~T0 @X0 1 r4 ]
+[v _scherm `E1442 ~T0 @X0 1 r4 ]
 [f ]
+"99
+[; ;scherm.c: 99:     if (lang == 0) {
+[e $ ! == _lang -> 0 `i 159  ]
+{
+"100
+[; ;scherm.c: 100:         if (scherm == SCREEN_1) {
+[e $ ! == -> _scherm `ui -> . `E1442 0 `ui 160  ]
+{
+"101
+[; ;scherm.c: 101:             for (int i = 0; i < 5; i++) {
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 5 `i 161  ]
+[e $U 162  ]
+[e :U 161 ]
+{
+"102
+[; ;scherm.c: 102:                 scherm1_buffer[position * 5 + i] = ascii[character][i];
+[e = *U + &U _scherm1_buffer * -> -> + * _position -> 5 `i _i `ui `ux -> -> # *U &U _scherm1_buffer `ui `ux *U + &U *U + &U _ascii * -> _character `ux -> * -> # *U &U *U &U _ascii `ui -> -> 5 `i `ui `ux * -> -> _i `ui `ux -> -> # *U &U *U + &U _ascii * -> _character `ux -> * -> # *U &U *U &U _ascii `ui -> -> 5 `i `ui `ux `ui `ux ]
+"103
+[; ;scherm.c: 103:             }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 5 `i 161  ]
+[e :U 162 ]
+}
+"104
+[; ;scherm.c: 104:         } else if (scherm == SCREEN_2) {
+}
+[e $U 164  ]
+[e :U 160 ]
+[e $ ! == -> _scherm `ui -> . `E1442 1 `ui 165  ]
+{
 "105
-[; ;scherm.c: 105:     if (lang == 0) {
-[e $ ! == _lang -> 0 `i 160  ]
+[; ;scherm.c: 105:             for (int i = 0; i < 5; i++) {
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 5 `i 166  ]
+[e $U 167  ]
+[e :U 166 ]
 {
 "106
-[; ;scherm.c: 106:         if (scherm == SCREEN_1) {
-[e $ ! == -> _scherm `ui -> . `E1435 0 `ui 161  ]
-{
-"107
-[; ;scherm.c: 107:             for (int i = 0; i < 5; i++) {
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 5 `i 162  ]
-[e $U 163  ]
-[e :U 162 ]
-{
-"108
-[; ;scherm.c: 108:                 scherm1_buffer[position * 5 + i] = ascii[character][i];
-[e = *U + &U _scherm1_buffer * -> -> + * _position -> 5 `i _i `ui `ux -> -> # *U &U _scherm1_buffer `ui `ux *U + &U *U + &U _ascii * -> _character `ux -> * -> # *U &U *U &U _ascii `ui -> -> 5 `i `ui `ux * -> -> _i `ui `ux -> -> # *U &U *U + &U _ascii * -> _character `ux -> * -> # *U &U *U &U _ascii `ui -> -> 5 `i `ui `ux `ui `ux ]
-"109
-[; ;scherm.c: 109:             }
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 5 `i 162  ]
-[e :U 163 ]
-}
-"110
-[; ;scherm.c: 110:         } else if (scherm == SCREEN_2) {
-}
-[e $U 165  ]
-[e :U 161 ]
-[e $ ! == -> _scherm `ui -> . `E1435 1 `ui 166  ]
-{
-"111
-[; ;scherm.c: 111:             for (int i = 0; i < 5; i++) {
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 5 `i 167  ]
-[e $U 168  ]
-[e :U 167 ]
-{
-"112
-[; ;scherm.c: 112:                 scherm2_buffer[position * 5 + i] = ascii[character][i];
+[; ;scherm.c: 106:                 scherm2_buffer[position * 5 + i] = ascii[character][i];
 [e = *U + &U _scherm2_buffer * -> -> + * _position -> 5 `i _i `ui `ux -> -> # *U &U _scherm2_buffer `ui `ux *U + &U *U + &U _ascii * -> _character `ux -> * -> # *U &U *U &U _ascii `ui -> -> 5 `i `ui `ux * -> -> _i `ui `ux -> -> # *U &U *U + &U _ascii * -> _character `ux -> * -> # *U &U *U &U _ascii `ui -> -> 5 `i `ui `ux `ui `ux ]
-"113
-[; ;scherm.c: 113:             }
+"107
+[; ;scherm.c: 107:             }
 }
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 5 `i 167  ]
-[e :U 168 ]
+[e $ < _i -> 5 `i 166  ]
+[e :U 167 ]
 }
-"114
-[; ;scherm.c: 114:         } else if (scherm == SCREEN_1_2) {
+"108
+[; ;scherm.c: 108:         } else if (scherm == SCREEN_1_2) {
 }
-[e $U 170  ]
-[e :U 166 ]
-[e $ ! == -> _scherm `ui -> . `E1435 2 `ui 171  ]
+[e $U 169  ]
+[e :U 165 ]
+[e $ ! == -> _scherm `ui -> . `E1442 2 `ui 170  ]
 {
-"115
-[; ;scherm.c: 115:             for (int i = 0; i < 5; i++) {
+"109
+[; ;scherm.c: 109:             for (int i = 0; i < 5; i++) {
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 5 `i 172  ]
-[e $U 173  ]
+[e $ < _i -> 5 `i 171  ]
+[e $U 172  ]
+[e :U 171 ]
+{
+"110
+[; ;scherm.c: 110:                 scherm1_buffer[position * 5 + i] = ascii[character][i];
+[e = *U + &U _scherm1_buffer * -> -> + * _position -> 5 `i _i `ui `ux -> -> # *U &U _scherm1_buffer `ui `ux *U + &U *U + &U _ascii * -> _character `ux -> * -> # *U &U *U &U _ascii `ui -> -> 5 `i `ui `ux * -> -> _i `ui `ux -> -> # *U &U *U + &U _ascii * -> _character `ux -> * -> # *U &U *U &U _ascii `ui -> -> 5 `i `ui `ux `ui `ux ]
+"111
+[; ;scherm.c: 111:                 scherm2_buffer[position * 5 + i] = ascii[character][i];
+[e = *U + &U _scherm2_buffer * -> -> + * _position -> 5 `i _i `ui `ux -> -> # *U &U _scherm2_buffer `ui `ux *U + &U *U + &U _ascii * -> _character `ux -> * -> # *U &U *U &U _ascii `ui -> -> 5 `i `ui `ux * -> -> _i `ui `ux -> -> # *U &U *U + &U _ascii * -> _character `ux -> * -> # *U &U *U &U _ascii `ui -> -> 5 `i `ui `ux `ui `ux ]
+"112
+[; ;scherm.c: 112:             }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 5 `i 171  ]
 [e :U 172 ]
+}
+"113
+[; ;scherm.c: 113:         }
+}
+[e :U 170 ]
+[e :U 169 ]
+[e :U 164 ]
+"114
+[; ;scherm.c: 114:     }
+}
+[e $U 174  ]
+"115
+[; ;scherm.c: 115:     else if (lang == 2) {
+[e :U 159 ]
+[e $ ! == _lang -> 2 `i 175  ]
 {
 "116
-[; ;scherm.c: 116:                 scherm1_buffer[position * 5 + i] = ascii[character][i];
-[e = *U + &U _scherm1_buffer * -> -> + * _position -> 5 `i _i `ui `ux -> -> # *U &U _scherm1_buffer `ui `ux *U + &U *U + &U _ascii * -> _character `ux -> * -> # *U &U *U &U _ascii `ui -> -> 5 `i `ui `ux * -> -> _i `ui `ux -> -> # *U &U *U + &U _ascii * -> _character `ux -> * -> # *U &U *U &U _ascii `ui -> -> 5 `i `ui `ux `ui `ux ]
+[; ;scherm.c: 116:         if (scherm == SCREEN_1) {
+[e $ ! == -> _scherm `ui -> . `E1442 0 `ui 176  ]
+{
 "117
-[; ;scherm.c: 117:                 scherm2_buffer[position * 5 + i] = ascii[character][i];
-[e = *U + &U _scherm2_buffer * -> -> + * _position -> 5 `i _i `ui `ux -> -> # *U &U _scherm2_buffer `ui `ux *U + &U *U + &U _ascii * -> _character `ux -> * -> # *U &U *U &U _ascii `ui -> -> 5 `i `ui `ux * -> -> _i `ui `ux -> -> # *U &U *U + &U _ascii * -> _character `ux -> * -> # *U &U *U &U _ascii `ui -> -> 5 `i `ui `ux `ui `ux ]
+[; ;scherm.c: 117:             for (int i = 0; i < 5; i++) {
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 5 `i 177  ]
+[e $U 178  ]
+[e :U 177 ]
+{
 "118
-[; ;scherm.c: 118:             }
+[; ;scherm.c: 118:                 scherm1_buffer[position * 5 + i] = arabic[character][i];
+[e = *U + &U _scherm1_buffer * -> -> + * _position -> 5 `i _i `ui `ux -> -> # *U &U _scherm1_buffer `ui `ux *U + &U *U + &U _arabic * -> _character `ux -> * -> # *U &U *U &U _arabic `ui -> -> 5 `i `ui `ux * -> -> _i `ui `ux -> -> # *U &U *U + &U _arabic * -> _character `ux -> * -> # *U &U *U &U _arabic `ui -> -> 5 `i `ui `ux `ui `ux ]
+"119
+[; ;scherm.c: 119:             }
 }
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 5 `i 172  ]
-[e :U 173 ]
+[e $ < _i -> 5 `i 177  ]
+[e :U 178 ]
 }
-"119
-[; ;scherm.c: 119:         }
-}
-[e :U 171 ]
-[e :U 170 ]
-[e :U 165 ]
 "120
-[; ;scherm.c: 120:     }
+[; ;scherm.c: 120:         } else if (scherm == SCREEN_2) {
 }
-[e $U 175  ]
+[e $U 180  ]
+[e :U 176 ]
+[e $ ! == -> _scherm `ui -> . `E1442 1 `ui 181  ]
+{
 "121
-[; ;scherm.c: 121:     else if (lang == 2) {
-[e :U 160 ]
-[e $ ! == _lang -> 2 `i 176  ]
+[; ;scherm.c: 121:             for (int i = 0; i < 5; i++) {
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 5 `i 182  ]
+[e $U 183  ]
+[e :U 182 ]
 {
 "122
-[; ;scherm.c: 122:         if (scherm == SCREEN_1) {
-[e $ ! == -> _scherm `ui -> . `E1435 0 `ui 177  ]
-{
-"123
-[; ;scherm.c: 123:             for (int i = 0; i < 5; i++) {
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 5 `i 178  ]
-[e $U 179  ]
-[e :U 178 ]
-{
-"124
-[; ;scherm.c: 124:                 scherm1_buffer[position * 5 + i] = arabic[character][i];
-[e = *U + &U _scherm1_buffer * -> -> + * _position -> 5 `i _i `ui `ux -> -> # *U &U _scherm1_buffer `ui `ux *U + &U *U + &U _arabic * -> _character `ux -> * -> # *U &U *U &U _arabic `ui -> -> 5 `i `ui `ux * -> -> _i `ui `ux -> -> # *U &U *U + &U _arabic * -> _character `ux -> * -> # *U &U *U &U _arabic `ui -> -> 5 `i `ui `ux `ui `ux ]
-"125
-[; ;scherm.c: 125:             }
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 5 `i 178  ]
-[e :U 179 ]
-}
-"126
-[; ;scherm.c: 126:         } else if (scherm == SCREEN_2) {
-}
-[e $U 181  ]
-[e :U 177 ]
-[e $ ! == -> _scherm `ui -> . `E1435 1 `ui 182  ]
-{
-"127
-[; ;scherm.c: 127:             for (int i = 0; i < 5; i++) {
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 5 `i 183  ]
-[e $U 184  ]
-[e :U 183 ]
-{
-"128
-[; ;scherm.c: 128:                 scherm2_buffer[position * 5 + i] = arabic[character][i];
+[; ;scherm.c: 122:                 scherm2_buffer[position * 5 + i] = arabic[character][i];
 [e = *U + &U _scherm2_buffer * -> -> + * _position -> 5 `i _i `ui `ux -> -> # *U &U _scherm2_buffer `ui `ux *U + &U *U + &U _arabic * -> _character `ux -> * -> # *U &U *U &U _arabic `ui -> -> 5 `i `ui `ux * -> -> _i `ui `ux -> -> # *U &U *U + &U _arabic * -> _character `ux -> * -> # *U &U *U &U _arabic `ui -> -> 5 `i `ui `ux `ui `ux ]
-"129
-[; ;scherm.c: 129:             }
+"123
+[; ;scherm.c: 123:             }
 }
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 5 `i 183  ]
-[e :U 184 ]
+[e $ < _i -> 5 `i 182  ]
+[e :U 183 ]
 }
-"130
-[; ;scherm.c: 130:         } else if (scherm == SCREEN_1_2) {
+"124
+[; ;scherm.c: 124:         } else if (scherm == SCREEN_1_2) {
 }
-[e $U 186  ]
-[e :U 182 ]
-[e $ ! == -> _scherm `ui -> . `E1435 2 `ui 187  ]
+[e $U 185  ]
+[e :U 181 ]
+[e $ ! == -> _scherm `ui -> . `E1442 2 `ui 186  ]
 {
-"131
-[; ;scherm.c: 131:             for (int i = 0; i < 5; i++) {
+"125
+[; ;scherm.c: 125:             for (int i = 0; i < 5; i++) {
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 5 `i 188  ]
-[e $U 189  ]
+[e $ < _i -> 5 `i 187  ]
+[e $U 188  ]
+[e :U 187 ]
+{
+"126
+[; ;scherm.c: 126:                 scherm1_buffer[position * 5 + i] = arabic[character][i];
+[e = *U + &U _scherm1_buffer * -> -> + * _position -> 5 `i _i `ui `ux -> -> # *U &U _scherm1_buffer `ui `ux *U + &U *U + &U _arabic * -> _character `ux -> * -> # *U &U *U &U _arabic `ui -> -> 5 `i `ui `ux * -> -> _i `ui `ux -> -> # *U &U *U + &U _arabic * -> _character `ux -> * -> # *U &U *U &U _arabic `ui -> -> 5 `i `ui `ux `ui `ux ]
+"127
+[; ;scherm.c: 127:                 scherm2_buffer[position * 5 + i] = arabic[character][i];
+[e = *U + &U _scherm2_buffer * -> -> + * _position -> 5 `i _i `ui `ux -> -> # *U &U _scherm2_buffer `ui `ux *U + &U *U + &U _arabic * -> _character `ux -> * -> # *U &U *U &U _arabic `ui -> -> 5 `i `ui `ux * -> -> _i `ui `ux -> -> # *U &U *U + &U _arabic * -> _character `ux -> * -> # *U &U *U &U _arabic `ui -> -> 5 `i `ui `ux `ui `ux ]
+"128
+[; ;scherm.c: 128:             }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 5 `i 187  ]
 [e :U 188 ]
+}
+"129
+[; ;scherm.c: 129:         }
+}
+[e :U 186 ]
+[e :U 185 ]
+[e :U 180 ]
+"130
+[; ;scherm.c: 130:     }
+}
+[e $U 190  ]
+"131
+[; ;scherm.c: 131:     else if (lang == 4) {
+[e :U 175 ]
+[e $ ! == _lang -> 4 `i 191  ]
 {
 "132
-[; ;scherm.c: 132:                 scherm1_buffer[position * 5 + i] = arabic[character][i];
-[e = *U + &U _scherm1_buffer * -> -> + * _position -> 5 `i _i `ui `ux -> -> # *U &U _scherm1_buffer `ui `ux *U + &U *U + &U _arabic * -> _character `ux -> * -> # *U &U *U &U _arabic `ui -> -> 5 `i `ui `ux * -> -> _i `ui `ux -> -> # *U &U *U + &U _arabic * -> _character `ux -> * -> # *U &U *U &U _arabic `ui -> -> 5 `i `ui `ux `ui `ux ]
+[; ;scherm.c: 132:         if (scherm == SCREEN_1) {
+[e $ ! == -> _scherm `ui -> . `E1442 0 `ui 192  ]
+{
 "133
-[; ;scherm.c: 133:                 scherm2_buffer[position * 5 + i] = arabic[character][i];
-[e = *U + &U _scherm2_buffer * -> -> + * _position -> 5 `i _i `ui `ux -> -> # *U &U _scherm2_buffer `ui `ux *U + &U *U + &U _arabic * -> _character `ux -> * -> # *U &U *U &U _arabic `ui -> -> 5 `i `ui `ux * -> -> _i `ui `ux -> -> # *U &U *U + &U _arabic * -> _character `ux -> * -> # *U &U *U &U _arabic `ui -> -> 5 `i `ui `ux `ui `ux ]
+[; ;scherm.c: 133:             for (int i = 0; i < 5; i++) {
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 5 `i 193  ]
+[e $U 194  ]
+[e :U 193 ]
+{
 "134
-[; ;scherm.c: 134:             }
+[; ;scherm.c: 134:                 scherm1_buffer[position * 5 + i] = hebrew[character][i];
+[e = *U + &U _scherm1_buffer * -> -> + * _position -> 5 `i _i `ui `ux -> -> # *U &U _scherm1_buffer `ui `ux *U + &U *U + &U _hebrew * -> _character `ux -> * -> # *U &U *U &U _hebrew `ui -> -> 5 `i `ui `ux * -> -> _i `ui `ux -> -> # *U &U *U + &U _hebrew * -> _character `ux -> * -> # *U &U *U &U _hebrew `ui -> -> 5 `i `ui `ux `ui `ux ]
+"135
+[; ;scherm.c: 135:             }
 }
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 5 `i 188  ]
-[e :U 189 ]
+[e $ < _i -> 5 `i 193  ]
+[e :U 194 ]
 }
-"135
-[; ;scherm.c: 135:         }
-}
-[e :U 187 ]
-[e :U 186 ]
-[e :U 181 ]
 "136
-[; ;scherm.c: 136:     }
+[; ;scherm.c: 136:         } else if (scherm == SCREEN_2) {
 }
-[e $U 191  ]
+[e $U 196  ]
+[e :U 192 ]
+[e $ ! == -> _scherm `ui -> . `E1442 1 `ui 197  ]
+{
 "137
-[; ;scherm.c: 137:     else if (lang == 4) {
-[e :U 176 ]
-[e $ ! == _lang -> 4 `i 192  ]
+[; ;scherm.c: 137:             for (int i = 0; i < 5; i++) {
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 5 `i 198  ]
+[e $U 199  ]
+[e :U 198 ]
 {
 "138
-[; ;scherm.c: 138:         if (scherm == SCREEN_1) {
-[e $ ! == -> _scherm `ui -> . `E1435 0 `ui 193  ]
-{
-"139
-[; ;scherm.c: 139:             for (int i = 0; i < 5; i++) {
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 5 `i 194  ]
-[e $U 195  ]
-[e :U 194 ]
-{
-"140
-[; ;scherm.c: 140:                 scherm1_buffer[position * 5 + i] = hebrew[character][i];
-[e = *U + &U _scherm1_buffer * -> -> + * _position -> 5 `i _i `ui `ux -> -> # *U &U _scherm1_buffer `ui `ux *U + &U *U + &U _hebrew * -> _character `ux -> * -> # *U &U *U &U _hebrew `ui -> -> 5 `i `ui `ux * -> -> _i `ui `ux -> -> # *U &U *U + &U _hebrew * -> _character `ux -> * -> # *U &U *U &U _hebrew `ui -> -> 5 `i `ui `ux `ui `ux ]
-"141
-[; ;scherm.c: 141:             }
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 5 `i 194  ]
-[e :U 195 ]
-}
-"142
-[; ;scherm.c: 142:         } else if (scherm == SCREEN_2) {
-}
-[e $U 197  ]
-[e :U 193 ]
-[e $ ! == -> _scherm `ui -> . `E1435 1 `ui 198  ]
-{
-"143
-[; ;scherm.c: 143:             for (int i = 0; i < 5; i++) {
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 5 `i 199  ]
-[e $U 200  ]
-[e :U 199 ]
-{
-"144
-[; ;scherm.c: 144:                 scherm2_buffer[position * 5 + i] = hebrew[character][i];
+[; ;scherm.c: 138:                 scherm2_buffer[position * 5 + i] = hebrew[character][i];
 [e = *U + &U _scherm2_buffer * -> -> + * _position -> 5 `i _i `ui `ux -> -> # *U &U _scherm2_buffer `ui `ux *U + &U *U + &U _hebrew * -> _character `ux -> * -> # *U &U *U &U _hebrew `ui -> -> 5 `i `ui `ux * -> -> _i `ui `ux -> -> # *U &U *U + &U _hebrew * -> _character `ux -> * -> # *U &U *U &U _hebrew `ui -> -> 5 `i `ui `ux `ui `ux ]
-"145
-[; ;scherm.c: 145:             }
+"139
+[; ;scherm.c: 139:             }
 }
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 5 `i 199  ]
-[e :U 200 ]
+[e $ < _i -> 5 `i 198  ]
+[e :U 199 ]
 }
-"146
-[; ;scherm.c: 146:         } else if (scherm == SCREEN_1_2) {
+"140
+[; ;scherm.c: 140:         } else if (scherm == SCREEN_1_2) {
 }
-[e $U 202  ]
-[e :U 198 ]
-[e $ ! == -> _scherm `ui -> . `E1435 2 `ui 203  ]
+[e $U 201  ]
+[e :U 197 ]
+[e $ ! == -> _scherm `ui -> . `E1442 2 `ui 202  ]
 {
-"147
-[; ;scherm.c: 147:             for (int i = 0; i < 5; i++) {
+"141
+[; ;scherm.c: 141:             for (int i = 0; i < 5; i++) {
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 5 `i 204  ]
-[e $U 205  ]
+[e $ < _i -> 5 `i 203  ]
+[e $U 204  ]
+[e :U 203 ]
+{
+"142
+[; ;scherm.c: 142:                 scherm1_buffer[position * 5 + i] = hebrew[character][i];
+[e = *U + &U _scherm1_buffer * -> -> + * _position -> 5 `i _i `ui `ux -> -> # *U &U _scherm1_buffer `ui `ux *U + &U *U + &U _hebrew * -> _character `ux -> * -> # *U &U *U &U _hebrew `ui -> -> 5 `i `ui `ux * -> -> _i `ui `ux -> -> # *U &U *U + &U _hebrew * -> _character `ux -> * -> # *U &U *U &U _hebrew `ui -> -> 5 `i `ui `ux `ui `ux ]
+"143
+[; ;scherm.c: 143:                 scherm2_buffer[position * 5 + i] = hebrew[character][i];
+[e = *U + &U _scherm2_buffer * -> -> + * _position -> 5 `i _i `ui `ux -> -> # *U &U _scherm2_buffer `ui `ux *U + &U *U + &U _hebrew * -> _character `ux -> * -> # *U &U *U &U _hebrew `ui -> -> 5 `i `ui `ux * -> -> _i `ui `ux -> -> # *U &U *U + &U _hebrew * -> _character `ux -> * -> # *U &U *U &U _hebrew `ui -> -> 5 `i `ui `ux `ui `ux ]
+"144
+[; ;scherm.c: 144:             }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 5 `i 203  ]
 [e :U 204 ]
+}
+"145
+[; ;scherm.c: 145:         }
+}
+[e :U 202 ]
+[e :U 201 ]
+[e :U 196 ]
+"146
+[; ;scherm.c: 146:     }
+}
+[e $U 206  ]
+"147
+[; ;scherm.c: 147:     else if (lang == 6) {
+[e :U 191 ]
+[e $ ! == _lang -> 6 `i 207  ]
 {
 "148
-[; ;scherm.c: 148:                 scherm1_buffer[position * 5 + i] = hebrew[character][i];
-[e = *U + &U _scherm1_buffer * -> -> + * _position -> 5 `i _i `ui `ux -> -> # *U &U _scherm1_buffer `ui `ux *U + &U *U + &U _hebrew * -> _character `ux -> * -> # *U &U *U &U _hebrew `ui -> -> 5 `i `ui `ux * -> -> _i `ui `ux -> -> # *U &U *U + &U _hebrew * -> _character `ux -> * -> # *U &U *U &U _hebrew `ui -> -> 5 `i `ui `ux `ui `ux ]
+[; ;scherm.c: 148:         if (scherm == SCREEN_1) {
+[e $ ! == -> _scherm `ui -> . `E1442 0 `ui 208  ]
+{
 "149
-[; ;scherm.c: 149:                 scherm2_buffer[position * 5 + i] = hebrew[character][i];
-[e = *U + &U _scherm2_buffer * -> -> + * _position -> 5 `i _i `ui `ux -> -> # *U &U _scherm2_buffer `ui `ux *U + &U *U + &U _hebrew * -> _character `ux -> * -> # *U &U *U &U _hebrew `ui -> -> 5 `i `ui `ux * -> -> _i `ui `ux -> -> # *U &U *U + &U _hebrew * -> _character `ux -> * -> # *U &U *U &U _hebrew `ui -> -> 5 `i `ui `ux `ui `ux ]
+[; ;scherm.c: 149:             for (int i = 0; i < 5; i++) {
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 5 `i 209  ]
+[e $U 210  ]
+[e :U 209 ]
+{
 "150
-[; ;scherm.c: 150:             }
+[; ;scherm.c: 150:                 scherm1_buffer[position * 5 + i] = aurebech[character][i];
+[e = *U + &U _scherm1_buffer * -> -> + * _position -> 5 `i _i `ui `ux -> -> # *U &U _scherm1_buffer `ui `ux *U + &U *U + &U _aurebech * -> _character `ux -> * -> # *U &U *U &U _aurebech `ui -> -> 5 `i `ui `ux * -> -> _i `ui `ux -> -> # *U &U *U + &U _aurebech * -> _character `ux -> * -> # *U &U *U &U _aurebech `ui -> -> 5 `i `ui `ux `ui `ux ]
+"151
+[; ;scherm.c: 151:             }
 }
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 5 `i 204  ]
-[e :U 205 ]
+[e $ < _i -> 5 `i 209  ]
+[e :U 210 ]
 }
-"151
-[; ;scherm.c: 151:         }
-}
-[e :U 203 ]
-[e :U 202 ]
-[e :U 197 ]
 "152
-[; ;scherm.c: 152:     }
+[; ;scherm.c: 152:         } else if (scherm == SCREEN_2) {
 }
-[e $U 207  ]
+[e $U 212  ]
+[e :U 208 ]
+[e $ ! == -> _scherm `ui -> . `E1442 1 `ui 213  ]
+{
 "153
-[; ;scherm.c: 153:     else if (lang == 6) {
-[e :U 192 ]
-[e $ ! == _lang -> 6 `i 208  ]
+[; ;scherm.c: 153:             for (int i = 0; i < 5; i++) {
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 5 `i 214  ]
+[e $U 215  ]
+[e :U 214 ]
 {
 "154
-[; ;scherm.c: 154:         if (scherm == SCREEN_1) {
-[e $ ! == -> _scherm `ui -> . `E1435 0 `ui 209  ]
-{
+[; ;scherm.c: 154:                 scherm2_buffer[position * 5 + i] = aurebech[character][i];
+[e = *U + &U _scherm2_buffer * -> -> + * _position -> 5 `i _i `ui `ux -> -> # *U &U _scherm2_buffer `ui `ux *U + &U *U + &U _aurebech * -> _character `ux -> * -> # *U &U *U &U _aurebech `ui -> -> 5 `i `ui `ux * -> -> _i `ui `ux -> -> # *U &U *U + &U _aurebech * -> _character `ux -> * -> # *U &U *U &U _aurebech `ui -> -> 5 `i `ui `ux `ui `ux ]
 "155
-[; ;scherm.c: 155:             for (int i = 0; i < 5; i++) {
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 5 `i 210  ]
-[e $U 211  ]
-[e :U 210 ]
-{
-"156
-[; ;scherm.c: 156:                 scherm1_buffer[position * 5 + i] = aurebech[character][i];
-[e = *U + &U _scherm1_buffer * -> -> + * _position -> 5 `i _i `ui `ux -> -> # *U &U _scherm1_buffer `ui `ux *U + &U *U + &U _aurebech * -> _character `ux -> * -> # *U &U *U &U _aurebech `ui -> -> 5 `i `ui `ux * -> -> _i `ui `ux -> -> # *U &U *U + &U _aurebech * -> _character `ux -> * -> # *U &U *U &U _aurebech `ui -> -> 5 `i `ui `ux `ui `ux ]
-"157
-[; ;scherm.c: 157:             }
+[; ;scherm.c: 155:             }
 }
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 5 `i 210  ]
-[e :U 211 ]
-}
-"158
-[; ;scherm.c: 158:         } else if (scherm == SCREEN_2) {
-}
-[e $U 213  ]
-[e :U 209 ]
-[e $ ! == -> _scherm `ui -> . `E1435 1 `ui 214  ]
-{
-"159
-[; ;scherm.c: 159:             for (int i = 0; i < 5; i++) {
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 5 `i 215  ]
-[e $U 216  ]
+[e $ < _i -> 5 `i 214  ]
 [e :U 215 ]
+}
+"156
+[; ;scherm.c: 156:         } else if (scherm == SCREEN_1_2) {
+}
+[e $U 217  ]
+[e :U 213 ]
+[e $ ! == -> _scherm `ui -> . `E1442 2 `ui 218  ]
 {
-"160
-[; ;scherm.c: 160:                 scherm2_buffer[position * 5 + i] = aurebech[character][i];
-[e = *U + &U _scherm2_buffer * -> -> + * _position -> 5 `i _i `ui `ux -> -> # *U &U _scherm2_buffer `ui `ux *U + &U *U + &U _aurebech * -> _character `ux -> * -> # *U &U *U &U _aurebech `ui -> -> 5 `i `ui `ux * -> -> _i `ui `ux -> -> # *U &U *U + &U _aurebech * -> _character `ux -> * -> # *U &U *U &U _aurebech `ui -> -> 5 `i `ui `ux `ui `ux ]
-"161
-[; ;scherm.c: 161:             }
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 5 `i 215  ]
-[e :U 216 ]
-}
-"162
-[; ;scherm.c: 162:         } else if (scherm == SCREEN_1_2) {
-}
-[e $U 218  ]
-[e :U 214 ]
-[e $ ! == -> _scherm `ui -> . `E1435 2 `ui 219  ]
-{
-"163
-[; ;scherm.c: 163:             for (int i = 0; i < 5; i++) {
+"157
+[; ;scherm.c: 157:             for (int i = 0; i < 5; i++) {
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 5 `i 220  ]
-[e $U 221  ]
-[e :U 220 ]
+[e $ < _i -> 5 `i 219  ]
+[e $U 220  ]
+[e :U 219 ]
 {
-"164
-[; ;scherm.c: 164:                 scherm1_buffer[position * 5 + i] = aurebech[character][i];
+"158
+[; ;scherm.c: 158:                 scherm1_buffer[position * 5 + i] = aurebech[character][i];
 [e = *U + &U _scherm1_buffer * -> -> + * _position -> 5 `i _i `ui `ux -> -> # *U &U _scherm1_buffer `ui `ux *U + &U *U + &U _aurebech * -> _character `ux -> * -> # *U &U *U &U _aurebech `ui -> -> 5 `i `ui `ux * -> -> _i `ui `ux -> -> # *U &U *U + &U _aurebech * -> _character `ux -> * -> # *U &U *U &U _aurebech `ui -> -> 5 `i `ui `ux `ui `ux ]
-"165
-[; ;scherm.c: 165:                 scherm2_buffer[position * 5 + i] = aurebech[character][i];
+"159
+[; ;scherm.c: 159:                 scherm2_buffer[position * 5 + i] = aurebech[character][i];
 [e = *U + &U _scherm2_buffer * -> -> + * _position -> 5 `i _i `ui `ux -> -> # *U &U _scherm2_buffer `ui `ux *U + &U *U + &U _aurebech * -> _character `ux -> * -> # *U &U *U &U _aurebech `ui -> -> 5 `i `ui `ux * -> -> _i `ui `ux -> -> # *U &U *U + &U _aurebech * -> _character `ux -> * -> # *U &U *U &U _aurebech `ui -> -> 5 `i `ui `ux `ui `ux ]
-"166
-[; ;scherm.c: 166:             }
+"160
+[; ;scherm.c: 160:             }
 }
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 5 `i 220  ]
-[e :U 221 ]
+[e $ < _i -> 5 `i 219  ]
+[e :U 220 ]
 }
-"167
-[; ;scherm.c: 167:         }
+"161
+[; ;scherm.c: 161:         }
 }
-[e :U 219 ]
 [e :U 218 ]
-[e :U 213 ]
-"168
-[; ;scherm.c: 168:     }
+[e :U 217 ]
+[e :U 212 ]
+"162
+[; ;scherm.c: 162:     }
 }
-[e :U 208 ]
 [e :U 207 ]
-[e :U 191 ]
-[e :U 175 ]
-"170
-[; ;scherm.c: 170: }
-[e :UE 159 ]
+[e :U 206 ]
+[e :U 190 ]
+[e :U 174 ]
+"164
+[; ;scherm.c: 164: }
+[e :UE 158 ]
 }
-"172
-[; ;scherm.c: 172: void text_to_buffer(Screen scherm, char newtext[]) {
-[v _text_to_buffer `(v ~T0 @X0 1 ef2`E1435`*uc ]
+"166
+[; ;scherm.c: 166: void text_to_buffer(Screen scherm, char newtext[]) {
+[v _text_to_buffer `(v ~T0 @X0 1 ef2`E1442`*uc ]
 {
 [e :U _text_to_buffer ]
-[v _scherm `E1435 ~T0 @X0 1 r1 ]
+[v _scherm `E1442 ~T0 @X0 1 r1 ]
 [v _newtext `*uc ~T0 @X0 1 r2 ]
 [f ]
-"173
-[; ;scherm.c: 173:     for (int i = 0; i < 8; i++) {
+"167
+[; ;scherm.c: 167:     for (int i = 0; i < 8; i++) {
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 8 `i 224  ]
-[e $U 225  ]
+[e $ < _i -> 8 `i 223  ]
+[e $U 224  ]
+[e :U 223 ]
+{
+"168
+[; ;scherm.c: 168:         load_buffer(num_of_lang, newtext[i], i, scherm);
+[e ( _load_buffer (4 , , , _num_of_lang *U + _newtext * -> _i `x -> -> # *U _newtext `i `x _i _scherm ]
+"169
+[; ;scherm.c: 169:     }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 8 `i 223  ]
 [e :U 224 ]
-{
-"174
-[; ;scherm.c: 174:         load_buffer(num_of_lang, newtext[i], i, scherm);
-[e ( _load_buffer (4 , , , _num_of_lang *U + _newtext * -> _i `x -> -> # *U _newtext `i `x _i _scherm ]
-"175
-[; ;scherm.c: 175:     }
 }
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 8 `i 224  ]
-[e :U 225 ]
+"170
+[; ;scherm.c: 170: }
+[e :UE 222 ]
 }
-"176
-[; ;scherm.c: 176: }
-[e :UE 223 ]
-}
-"178
-[; ;scherm.c: 178: void text_to_buffer_vol(Screen scherm, char newtext[]) {
-[v _text_to_buffer_vol `(v ~T0 @X0 1 ef2`E1435`*uc ]
-{
-[e :U _text_to_buffer_vol ]
-[v _scherm `E1435 ~T0 @X0 1 r1 ]
-[v _newtext `*uc ~T0 @X0 1 r2 ]
-[f ]
-"179
-[; ;scherm.c: 179:     for (int i = 0; i < 6; i++) {
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 6 `i 228  ]
-[e $U 229  ]
-[e :U 228 ]
-{
-"180
-[; ;scherm.c: 180:         load_buffer(num_of_lang, newtext[i], i, scherm);
-[e ( _load_buffer (4 , , , _num_of_lang *U + _newtext * -> _i `x -> -> # *U _newtext `i `x _i _scherm ]
-"181
-[; ;scherm.c: 181:     }
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 6 `i 228  ]
-[e :U 229 ]
-}
-"182
-[; ;scherm.c: 182: }
-[e :UE 227 ]
-}
-"184
-[; ;scherm.c: 184: void text_to_buffer_input(Screen scherm, char newtext[]) {
-[v _text_to_buffer_input `(v ~T0 @X0 1 ef2`E1435`*uc ]
-{
-[e :U _text_to_buffer_input ]
-[v _scherm `E1435 ~T0 @X0 1 r1 ]
-[v _newtext `*uc ~T0 @X0 1 r2 ]
-[f ]
-"185
-[; ;scherm.c: 185:     for (int i = 0; i < 6; i++) {
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 6 `i 232  ]
-[e $U 233  ]
-[e :U 232 ]
-{
-"186
-[; ;scherm.c: 186:         load_buffer(num_of_lang, newtext[i], i, scherm);
-[e ( _load_buffer (4 , , , _num_of_lang *U + _newtext * -> _i `x -> -> # *U _newtext `i `x _i _scherm ]
-"187
-[; ;scherm.c: 187:     }
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 6 `i 232  ]
-[e :U 233 ]
-}
-"188
-[; ;scherm.c: 188: }
-[e :UE 231 ]
-}
-"190
-[; ;scherm.c: 190: void screen_transmit(char c) {
+"173
+[; ;scherm.c: 173: void screen_transmit(char c) {
 [v _screen_transmit `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _screen_transmit ]
 [v _c `uc ~T0 @X0 1 r1 ]
 [f ]
-"192
-[; ;scherm.c: 192:     SSPBUF = c;
+"175
+[; ;scherm.c: 175:     SSPBUF = c;
 [e = _SSPBUF -> _c `uc ]
-"193
-[; ;scherm.c: 193: }
-[e :UE 235 ]
+"176
+[; ;scherm.c: 176: }
+[e :UE 226 ]
 }

@@ -74,12 +74,6 @@ void scherm_setup() {
     text_to_buffer(SCREEN_1, screen1);
 }
 
-void scherm_setup_lang(void) {
-    char screen2[6] = "INPUT:";
-    text_to_buffer_input(SCREEN_2, screen2);
-    char screen1[6] = "VOL:";
-    text_to_buffer_vol(SCREEN_1, screen1);
-}
 
 void send_buffer(Screen scherm) {
     if (scherm == SCREEN_1) {
@@ -175,17 +169,6 @@ void text_to_buffer(Screen scherm, char newtext[]) {
     }
 }
 
-void text_to_buffer_vol(Screen scherm, char newtext[]) {
-    for (int i = 0; i < 6; i++) {
-        load_buffer(num_of_lang, newtext[i], i, scherm);
-    }
-}
-
-void text_to_buffer_input(Screen scherm, char newtext[]) {
-    for (int i = 0; i < 6; i++) {
-        load_buffer(num_of_lang, newtext[i], i, scherm);
-    }
-}
 
 void screen_transmit(char c) {
     // FILL. THAT. BUFFER.

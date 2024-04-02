@@ -69,9 +69,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 "553
 [; ;D:/MPLABX/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f887.h: 553: extern volatile PIR1bits_t PIR1bits __attribute__((address(0x00C)));
 [v _PIR1bits `VS22 ~T0 @X0 0 e@12 ]
-"36 ./scherm.h
-[; ;./scherm.h: 36: void scherm_setup(void);
+"32 ./scherm.h
+[; ;./scherm.h: 32: void scherm_setup(void);
 [v _scherm_setup `(v ~T0 @X0 0 ef ]
+"84 remote.c
+[; ;remote.c: 84:             send_buffer(SCREEN_1);
+[c E1435 1 2 3 .. ]
+[n E1435 _Screen_ SCREEN_1 SCREEN_2 SCREEN_1_2  ]
+"34 ./scherm.h
+[; ;./scherm.h: 34: void send_buffer(Screen scherm);
+[v _send_buffer `(v ~T0 @X0 0 ef1`E1435 ]
 "54 D:/MPLABX/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f887.h
 [; ;D:/MPLABX/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f887.h: 54: __asm("INDF equ 00h");
 [; <" INDF equ 00h ;# ">
@@ -3964,23 +3971,23 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ..
 ]
-"45 ./scherm.h
-[; ;./scherm.h: 45: char scherm1_buffer[40];
+"41 ./scherm.h
+[; ;./scherm.h: 41: char scherm1_buffer[40];
 [v _scherm1_buffer `uc ~T0 @X0 -> 40 `i e ]
-"46
-[; ;./scherm.h: 46: char scherm2_buffer[40];
+"42
+[; ;./scherm.h: 42: char scherm2_buffer[40];
 [v _scherm2_buffer `uc ~T0 @X0 -> 40 `i e ]
-"19 ./remote.h
-[; ;./remote.h: 19: volatile long final_code;
+"14 ./remote.h
+[; ;./remote.h: 14: volatile long final_code;
 [v _final_code `Vl ~T0 @X0 1 e ]
-"20
-[; ;./remote.h: 20: int timeraan;
+"15
+[; ;./remote.h: 15: int timeraan;
 [v _timeraan `i ~T0 @X0 1 e ]
-"21
-[; ;./remote.h: 21: volatile int remote_counter;
+"16
+[; ;./remote.h: 16: volatile int remote_counter;
 [v _remote_counter `Vi ~T0 @X0 1 e ]
-"22
-[; ;./remote.h: 22: int motoraan;
+"17
+[; ;./remote.h: 17: int motoraan;
 [v _motoraan `i ~T0 @X0 1 e ]
 "3 remote.c
 [; ;remote.c: 3: void remote_edge_handeling(void) {
@@ -4235,45 +4242,48 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;remote.c: 83:             scherm_setup();
 [e ( _scherm_setup ..  ]
 "84
-[; ;remote.c: 84:         }
+[; ;remote.c: 84:             send_buffer(SCREEN_1);
+[e ( _send_buffer (1 . `E1435 0 ]
+"85
+[; ;remote.c: 85:         }
 }
 [e :U 160 ]
-"86
-[; ;remote.c: 86:         temp_code = final_code & 0b010010000100;
-[e = _temp_code & _final_code -> -> 1156 `i `l ]
 "87
-[; ;remote.c: 87:         if (temp_code == 0b010010000100) {
+[; ;remote.c: 87:         temp_code = final_code & 0b010010000100;
+[e = _temp_code & _final_code -> -> 1156 `i `l ]
+"88
+[; ;remote.c: 88:         if (temp_code == 0b010010000100) {
 [e $ ! == _temp_code -> -> 1156 `i `l 161  ]
 {
-"88
-[; ;remote.c: 88:             num_of_lang++;
+"89
+[; ;remote.c: 89:             num_of_lang++;
 [e ++ _num_of_lang -> 1 `i ]
-"90
-[; ;remote.c: 90:         }
+"91
+[; ;remote.c: 91:         }
 }
 [e :U 161 ]
-"91
-[; ;remote.c: 91:     }
+"92
+[; ;remote.c: 92:     }
 }
 [e :U 148 ]
-"92
-[; ;remote.c: 92:     if (num_of_lang > 6) {
+"93
+[; ;remote.c: 93:     if (num_of_lang > 6) {
 [e $ ! > _num_of_lang -> 6 `i 162  ]
 {
-"93
-[; ;remote.c: 93:         num_of_lang = 0;
-[e = _num_of_lang -> 0 `i ]
 "94
-[; ;remote.c: 94:     }
+[; ;remote.c: 94:         num_of_lang = 0;
+[e = _num_of_lang -> 0 `i ]
+"95
+[; ;remote.c: 95:     }
 }
 [e :U 162 ]
-"95
-[; ;remote.c: 95:     final_code = 0;
-[e = _final_code -> -> 0 `i `l ]
 "96
-[; ;remote.c: 96:     remote_counter = 0;
-[e = _remote_counter -> 0 `i ]
+[; ;remote.c: 96:     final_code = 0;
+[e = _final_code -> -> 0 `i `l ]
 "97
-[; ;remote.c: 97: }
+[; ;remote.c: 97:     remote_counter = 0;
+[e = _remote_counter -> 0 `i ]
+"98
+[; ;remote.c: 98: }
 [e :UE 147 ]
 }
